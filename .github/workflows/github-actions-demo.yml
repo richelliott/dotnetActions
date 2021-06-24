@@ -16,9 +16,9 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
       - uses: actions/checkout@v2
       - uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '5.x.x' # SDK Version to use; x will use the latest version of the 3.1 channel
       - run: dotnet build ${{env.PROJECT_FILE}}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
